@@ -7,6 +7,8 @@
     = yield :head
 
   %body{class: current_section}
+    = render 'layouts/flash'
+    
     = render 'layouts/top_menu'
 
     %header#main
@@ -22,6 +24,7 @@
 
 
       .spacer
+
 
       =# render partial: 'layouts/main_menu'
       = yield :menu

@@ -11,10 +11,18 @@
           %li
             %a{href: '#'} location2
     %ul.nav.navbar-nav.navbar-right
-      %li
-        %a.nav-signin{href: '#', 'data-hover' => 'Sign in', 'data-toggle' => 'modal', 'data-target' => '#loginModal'}
-          %span Sign in
-      %li
-        %a.nav-register{href: '#', 'data-hover' => 'Register'}
-          %span Register
+      - if signed_in?
+        %li 
+          %span= current_user.email
+        %li
+          = link_to 'Sign out', sign_out_path, :method => :delete
+      - else
+        %li= link_to 'Sign in', sign_in_path
+
+      / %li
+      /   %a.nav-signin{href: '#', 'data-hover' => 'Sign in', 'data-toggle' => 'modal', 'data-target' => '#loginModal'}
+      /     %span Sign in
+      / %li
+      /   %a.nav-register{href: '#', 'data-hover' => 'Register'}
+      /     %span Register
     .clearfix

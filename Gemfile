@@ -25,9 +25,9 @@ gem 'google-webfonts-rails'
 # --------------------------
 
 gem 'country_select', '~> 1.2.0'
+gem 'clearance'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 1.2' # Read more: https://github.com/rails/jbuilder
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
