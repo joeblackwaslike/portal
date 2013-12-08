@@ -1,6 +1,11 @@
 class PagesController < ApplicationController
   before_filter :set_section
 
+  def index
+    @path = Intranet::Path.where(path: "/#{params[:path]}/").first || not_found
+    @page_content = @path.page.primary_content.html_safe
+  end
+
   def enter_new_earth
   end
 
